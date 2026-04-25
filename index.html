@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giray Kaçar | Trabzonspor</title>
+<title>Giray Kaçar</title>
 
 <style>
 * {
@@ -21,18 +21,53 @@ body {
     overflow-x: hidden;
 }
 
-body::before {
-    content: "";
+/* INTRO */
+#intro {
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(255,0,0,0.15), transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(0,100,255,0.15), transparent 40%);
+    background: linear-gradient(135deg, #7a0014, #001f5b);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeOut 2.5s ease forwards;
+    animation-delay: 2s;
+}
+
+#intro h1 {
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* ARKA PLAN LOGO */
+.bg-logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    opacity: 0.07;
+    transform: translate(-50%, -50%);
+    animation: spin 25s linear infinite;
     z-index: -1;
 }
 
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* CONTAINER */
 .container {
     padding: 50px 20px;
-    animation: fadeIn 1.2s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -40,62 +75,80 @@ body::before {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.logo {
-    width: 140px;
+/* TITLE */
+.title {
+    font-size: 34px;
     margin-bottom: 10px;
-    animation: glow 2s infinite alternate;
+    letter-spacing: 2px;
 }
 
-@keyframes glow {
-    from { filter: drop-shadow(0 0 5px red); transform: scale(1); }
-    to { filter: drop-shadow(0 0 25px blue); transform: scale(1.05); }
+/* VISITOR */
+.visitor {
+    font-size: 14px;
+    margin-bottom: 15px;
+    opacity: 0.8;
 }
 
-h1 {
-    font-size: 26px;
-    margin: 10px 0;
-}
-
+/* LIVE */
 .live {
     display: inline-block;
-    margin-top: 10px;
     padding: 8px 20px;
-    background: rgba(255,0,0,0.8);
+    background: rgba(255,0,0,0.85);
     border-radius: 30px;
     font-weight: bold;
+    margin-bottom: 25px;
     animation: blink 1s infinite;
-    backdrop-filter: blur(10px);
 }
 
 @keyframes blink {
     50% { opacity: 0.4; }
 }
 
+/* BUTTONS */
 .link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
     margin: 14px auto;
     padding: 16px;
     width: 85%;
     max-width: 420px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(12px);
+
+    background: rgba(255,255,255,0.06);
+    border: 2px solid transparent;
+    border-radius: 16px;
+
     color: white;
     text-decoration: none;
-    border-radius: 16px;
     font-weight: bold;
+
     transition: 0.3s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    /* NEON BORDO-MAVİ */
+    box-shadow:
+        0 0 8px #7a0014,
+        0 0 18px #001f5b;
 }
 
 .link:hover {
-    transform: scale(1.07);
-    background: rgba(255,255,255,0.15);
+    transform: scale(1.08);
+    box-shadow:
+        0 0 12px #ff0033,
+        0 0 25px #0033ff,
+        0 0 40px #7a0014;
 }
 
+/* ICON */
+.icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* MOBILE */
 @media (max-width: 600px) {
-    h1 { font-size: 20px; }
-    .logo { width: 110px; }
+    .title { font-size: 26px; }
 }
 </style>
 
@@ -103,24 +156,64 @@ h1 {
 
 <body>
 
+<!-- INTRO -->
+<div id="intro">
+    <h1>🔥 GİRAY KAÇAR 🔥</h1>
+    <p>Yükleniyor...</p>
+</div>
+
+<!-- DÖNEN TRABZONSPOR LOGO -->
+<img src="https://upload.wikimedia.org/wikipedia/tr/thumb/5/5c/Trabzonspor.svg/512px-Trabzonspor.svg.png" class="bg-logo">
+
 <div class="container">
 
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/tr/thumb/5/5c/Trabzonspor.svg/512px-Trabzonspor.svg.png">
+<h1 class="title">Giray Kaçar</h1>
 
-<h1>Giray Kaçar | Trabzonspor</h1>
+<div class="visitor">
+👀 Ziyaretçi: <span id="count">0</span>
+</div>
 
 <div class="live">🔴 CANLI YAYINDA</div>
 
-<br><br>
+<a class="link" href="https://kick.com/remzigiraykacar">
+    <img src="icons/kick.png" class="icon">
+    CANLI YAYIN (KICK)
+</a>
 
-<a class="link" href="https://kick.com/remzigiraykacar">🎮 Kick Yayın</a>
-<a class="link" href="https://www.instagram.com/giraykacarr">📸 Resmi Instagram</a>
-<a class="link" href="https://www.instagram.com/remzigiraykacar">📸 YouTube Kanal Instagram</a>
-<a class="link" href="https://youtube.com/@remzigiraykacar23">▶️ YouTube Kanalım</a>
-<a class="link" href="https://www.instagram.com/channel/AbbrjxNCkqs-cvzb/">📢 Instagram Topluluk Kanalım</a>
-<a class="link" href="https://www.instagram.com/1bordo1mavii">🔥 1 Bordo 1 Mavi</a>
+<a class="link" href="https://www.instagram.com/giraykacarr">
+    <img src="icons/instagram.png" class="icon">
+    RESMİ INSTAGRAM
+</a>
+
+<a class="link" href="https://youtube.com/@remzigiraykacar23">
+    <img src="icons/youtube.png" class="icon">
+    YOUTUBE KANAL
+</a>
+
+<a class="link" href="https://www.instagram.com/channel/AbbrjxNCkqs-cvzb/">
+    <img src="icons/community.png" class="icon">
+    INSTAGRAM TOPLULUK
+</a>
+
+<a class="link" href="https://www.instagram.com/1bordo1mavii">
+    <img src="icons/fans.png" class="icon">
+    1 BORDO 1 MAVİ
+</a>
 
 </div>
+
+<script>
+let count = localStorage.getItem("visitCount");
+
+if(!count){
+    count = 1;
+} else {
+    count = parseInt(count) + 1;
+}
+
+localStorage.setItem("visitCount", count);
+document.getElementById("count").innerText = count;
+</script>
 
 </body>
 </html>
