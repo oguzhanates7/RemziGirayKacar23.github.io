@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giray Kaçar | Trabzonspor</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #7a0014, #001f5b);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,0,0,0.15), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0,100,255,0.15), transparent 40%);
+    z-index: -1;
+}
+
+.container {
+    padding: 50px 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+    width: 140px;
+    margin-bottom: 10px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px red); transform: scale(1); }
+    to { filter: drop-shadow(0 0 25px blue); transform: scale(1.05); }
+}
+
+h1 {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.live {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: rgba(255,0,0,0.8);
+    border-radius: 30px;
+    font-weight: bold;
+    animation: blink 1s infinite;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes blink {
+    50% { opacity: 0.4; }
+}
+
+.link {
+    display: block;
+    margin: 14px auto;
+    padding: 16px;
+    width: 85%;
+    max-width: 420px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px);
+    color: white;
+    text-decoration: none;
+    border-radius: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.link:hover {
+    transform: scale(1.07);
+    background: rgba(255,255,255,0.15);
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 20px; }
+    .logo { width: 110px; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/tr/thumb/5/5c/Trabzonspor.svg/512px-Trabzonspor.svg.png">
+
+<h1>Giray Kaçar | Trabzonspor</h1>
+
+<div class="live">🔴 CANLI YAYINDA</div>
+
+<br><br>
+
+<a class="link" href="https://kick.com/remzigiraykacar">🎮 Kick Yayın</a>
+<a class="link" href="https://www.instagram.com/giraykacarr">📸 Ana Instagram</a>
+<a class="link" href="https://www.instagram.com/remzigiraykacar">📸 Diğer Instagram</a>
+<a class="link" href="https://youtube.com/@remzigiraykacar23">▶️ YouTube Kanal</a>
+<a class="link" href="https://www.instagram.com/channel/AbbrjxNCkqs-cvzb/">📢 Topluluk</a>
+<a class="link" href="https://www.instagram.com/1bordo1mavii">🔥 1 Bordo 1 Mavi</a>
+
+</div>
+
+</body>
+</html>
